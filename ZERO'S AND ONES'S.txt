@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int n,rem,zero=0,one=0;
+    printf("enter a number\n");
+    scanf("%d",&n);
+    for(int i=7;i>=0;i--)
+    {
+         printf("%d",((n>>i)&1));
+    }
+    for(int i=0;i<32;i++)
+   {
+       rem=n%2;
+       if(rem==1)
+       {
+           one++;
+       }
+       else
+       {
+          zero++;
+       }
+       n=n/2;
+   }
+   printf("\nones=%d\nzero=%d\n",one,zero);
+}
