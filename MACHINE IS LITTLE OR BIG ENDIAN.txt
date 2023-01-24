@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+    int a=10;
+    char *c = (char*)&a;
+    if(*c)
+    {
+        printf("lillte endian\n");
+    }
+    else
+    {
+        printf("big endian\n");
+    }
+}
