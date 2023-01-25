@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct sample
+{
+    int data;
+    struct sample *next;
+};
+
+void add_at_beg(struct sample **h,int num)
+{
+struct sample*temp=(struct sample*)malloc(sizeof(struct sample));
+
+temp->data=num;
+temp->next=*h;
+*h=temp;
+}
+
+void count(struct sample **h)
+{
+    struct sample *ptr=*h;
+    struct sample *temp=*h;
+    int count=0;
+    while(ptr->next!=NULL)
+    {
+        count++;
+        ptr=ptr->next;
+    }
+ int c=count/2;
+ for(int i=0;i<c;i++)
+ {
+     temp=temp->next;
+ }
+ printf("middle=%d\n",c);
+ printf("middle node=%d\n",temp->data);
+}
+
+void display(struct sample **ptr)
+{
+    struct sample *temp=NULL;
+    temp=*ptr;
+    
+    while(temp!=NULL)
+    {
+        printf("nodes=%d\n",temp->data);
+        temp=temp->next;
+    }
+}
+
+int main()
+{
+    struct sample *p=NULL;
+    
+    add_at_beg(&p,10);
+    add_at_beg(&p,20);
+    add_at_beg(&p,30);
+    add_at_beg(&p,40);
+    add_at_beg(&p,50);
+    add_at_beg(&p,60);
+    add_at_beg(&p,70);
+    display(&p);
+    printf("\n");
+    count(&p);
+        
+}
