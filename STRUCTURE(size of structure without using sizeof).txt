@@ -1,0 +1,14 @@
+#include<stdio.h>
+struct sample
+{
+    int roll_no;
+    char name;
+    float marks;
+};
+
+int main()
+{
+    struct sample *ptr=NULL;
+    ptr++;
+    printf("the size of structure is=%d\n",ptr);
+}
