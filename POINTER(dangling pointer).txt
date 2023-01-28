@@ -1,0 +1,26 @@
+DANGLING Pointer:
+
+The pointer pointes to the freed memory location is called Dangling Pointer.
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    
+    int *ptr=(int *)malloc(sizeof (int));
+    *ptr=10;
+    printf("%d\n",*ptr);
+    printf("%x\n",ptr);
+    free(ptr);
+     printf("after freeing the ptr\n");
+    printf("%d\n",*ptr);
+     printf("%x\n",ptr);
+    ptr=NULL;
+    if(ptr==NULL)
+    {
+        printf("this is null");
+    }else
+    {
+        printf("its is not null");
+    }
+}
