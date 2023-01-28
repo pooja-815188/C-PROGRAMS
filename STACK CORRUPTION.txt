@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+void str(char *b)
+{
+    char a[6];
+    strcpy(a,b);
+}
+int main()
+{
+    char c[11]="mirafratech";
+    str(c);
+    printf("completed\n");
+}
