@@ -1,0 +1,5 @@
+char *p = "hello"
+    It will store in read only memory , we can't do any changes.
+
+char s[] = "hello"
+    It will store in stack segmnet , we can do changes.
