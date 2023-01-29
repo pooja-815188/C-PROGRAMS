@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+void main()
+{
+    FILE *p,*temp;
+    char str[10],ch;
+    p=fopen("data.txt","w+");
+    printf("enter string\n");
+    scanf("%s",str);
+    fprintf(p,"%s",str);
+    fclose(p);
+    p=fopen("data.txt","r");
+    temp=fopen("temp.txt","w");
+    ch=fgetc(p);
+    while(ch!=EOF)
+    {
+    ch=ch+97;
+    fprintf(temp,"%c",ch);
+    ch=fgetc(p);
+  }
+    fclose(p);
+    fclose(temp);
+    printf("after encryption\n");
+    temp=fopen("temp.txt","r");
+    ch=fgetc(temp);
+    while(ch!=EOF)
+    {
+    printf("%c",ch);
+    ch=fgetc(temp);
+  }
+}
